@@ -1,0 +1,426 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+font-family:'Poppins',sans-serif;
+
+min-height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+overflow:hidden;
+
+background:
+linear-gradient(rgba(35,22,12,.55),rgba(35,22,12,.70)),
+url("https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=2000&q=80");
+
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+
+}
+
+/* Floating Sparkles */
+
+.stars{
+
+position:fixed;
+
+inset:0;
+
+pointer-events:none;
+
+overflow:hidden;
+
+}
+
+.stars::before{
+
+content:"✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨";
+
+position:absolute;
+
+top:-15%;
+
+left:-10%;
+
+width:120%;
+
+font-size:26px;
+
+opacity:.28;
+
+animation:sparkles 20s linear infinite;
+
+}
+
+/* Rose Petals */
+
+.petals{
+
+position:fixed;
+
+inset:0;
+
+pointer-events:none;
+
+overflow:hidden;
+
+}
+
+.petals::before{
+
+content:"🌹 🌹 🌹 🌹 🌹 🌹";
+
+position:absolute;
+
+top:-15%;
+
+left:-10%;
+
+width:120%;
+
+font-size:32px;
+
+opacity:.25;
+
+animation:petals 25s linear infinite;
+
+}
+
+/* Floating Books */
+
+.particles{
+
+position:fixed;
+
+inset:0;
+
+pointer-events:none;
+
+overflow:hidden;
+
+}
+
+.particles::before{
+
+content:"📖 📚 📖 📚 📖 📚";
+
+position:absolute;
+
+top:-20%;
+
+left:-10%;
+
+width:120%;
+
+font-size:26px;
+
+opacity:.18;
+
+animation:books 35s linear infinite;
+
+}
+
+/* Story Card */
+
+.container{
+
+width:92%;
+max-width:760px;
+
+padding:50px;
+
+background:rgba(255,248,238,.93);
+
+backdrop-filter:blur(8px);
+
+border-radius:28px;
+
+text-align:center;
+
+border:2px solid rgba(255,220,140,.4);
+
+box-shadow:
+0 20px 60px rgba(0,0,0,.45),
+0 0 40px rgba(255,215,0,.15);
+
+animation:fadeUp 1.4s;
+
+}
+
+/* Book Icon */
+
+.bookIcon{
+
+font-size:70px;
+
+margin-bottom:20px;
+
+animation:floatBook 3s ease-in-out infinite;
+
+}
+
+/* Heading */
+
+h1{
+
+font-family:'Cinzel',serif;
+
+font-size:48px;
+
+color:#d4af37;
+
+text-shadow:0 0 10px rgba(255,215,0,.5);
+
+margin-bottom:20px;
+
+}
+
+/* Subtitle */
+
+.subtitle{
+
+font-size:20px;
+
+color:#6b4c35;
+
+line-height:1.8;
+
+margin-bottom:25px;
+
+}
+
+/* Paragraph */
+
+p{
+
+font-size:18px;
+
+color:#5c4636;
+
+line-height:1.9;
+
+margin-bottom:20px;
+
+}
+
+/* Quote */
+
+.quote{
+
+margin:30px 0;
+
+font-family:'Cinzel',serif;
+
+font-size:22px;
+
+color:#8b5e3c;
+
+font-style:italic;
+
+}
+
+/* Input */
+
+input{
+
+width:80%;
+
+padding:14px;
+
+font-size:17px;
+
+border-radius:40px;
+
+border:2px solid #d4af37;
+
+outline:none;
+
+margin-top:20px;
+
+}
+
+/* Button */
+
+button{
+
+margin-top:25px;
+
+padding:15px 38px;
+
+font-size:18px;
+
+border:none;
+
+border-radius:40px;
+
+cursor:pointer;
+
+background:linear-gradient(45deg,#b8860b,#e6c35c);
+
+color:white;
+
+transition:.35s;
+
+box-shadow:0 0 20px rgba(255,215,0,.4);
+
+}
+
+button:hover{
+
+transform:translateY(-4px) scale(1.05);
+
+box-shadow:
+0 0 25px gold,
+0 0 50px rgba(255,215,0,.5);
+
+}
+
+/* Rose */
+
+.rose{
+
+margin-top:35px;
+
+font-size:60px;
+
+animation:roseFloat 4s ease-in-out infinite;
+
+}
+
+/* Animations */
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes floatBook{
+
+0%{transform:translateY(0);}
+50%{transform:translateY(-10px);}
+100%{transform:translateY(0);}
+
+}
+
+@keyframes roseFloat{
+
+0%{transform:translateY(0);}
+50%{transform:translateY(-8px);}
+100%{transform:translateY(0);}
+
+}
+
+@keyframes sparkles{
+
+0%{
+
+transform:translateY(-150px);
+
+}
+
+100%{
+
+transform:translateY(120vh);
+
+}
+
+}
+
+@keyframes petals{
+
+0%{
+
+transform:translateY(-120px) rotate(0deg);
+
+}
+
+100%{
+
+transform:translateY(120vh) rotate(360deg);
+
+}
+
+}
+
+@keyframes books{
+
+0%{
+
+transform:translateY(-180px) rotate(-8deg);
+
+}
+
+100%{
+
+transform:translateY(120vh) rotate(8deg);
+
+}
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.container{
+
+padding:30px 20px;
+
+}
+
+h1{
+
+font-size:34px;
+
+}
+
+.subtitle{
+
+font-size:17px;
+
+}
+
+p{
+
+font-size:16px;
+
+}
+
+input{
+
+width:100%;
+
+}
+
+button{
+
+width:100%;
+
+}
+
+}
