@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The Hidden Library</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="games.css">
+
+</head>
+
+<body>
+
+<div class="sparkles"></div>
+<div class="books"></div>
+
+<div class="container">
+
+<div class="bookIcon">📚</div>
+
+<h1>The Hidden Library</h1>
+
+<h2 id="welcome"></h2>
+
+<p class="intro">
+
+The enchanted library has chosen you.
+
+Before you can open the final story, three magical tasks await.
+
+Complete them to unlock the hidden chapter.
+
+</p>
+
+<!-- Task 1 -->
+
+<div class="task">
+
+<h3>📖 Task I</h3>
+
+<p>Return the enchanted books.</p>
+
+<div class="items">
+
+<button class="magicBtn" onclick="finishTask(1,this)">📕</button>
+
+<button class="magicBtn" onclick="finishTask(1,this)">📘</button>
+
+<button class="magicBtn" onclick="finishTask(1,this)">📗</button>
+
+</div>
+
+</div>
+
+<!-- Task 2 -->
+
+<div class="task">
+
+<h3>🕯️ Task II</h3>
+
+<p>Light the enchanted candles.</p>
+
+<div class="items">
+
+<button class="magicBtn" onclick="lightCandle(this)">🕯️</button>
+
+<button class="magicBtn" onclick="lightCandle(this)">🕯️</button>
+
+<button class="magicBtn" onclick="lightCandle(this)">🕯️</button>
+
+</div>
+
+</div>
+
+<!-- Task 3 -->
+
+<div class="task">
+
+<h3>🌹 Task III</h3>
+
+<p>Find the enchanted rose.</p>
+
+<div class="items">
+
+<button class="magicBtn" onclick="wrongObject()">🪞</button>
+
+<button class="magicBtn" onclick="wrongObject()">🔑</button>
+
+<button class="magicBtn" onclick="wrongObject()">🕰️</button>
+
+<button class="magicBtn" onclick="findRose()">🌹</button>
+
+<button class="magicBtn" onclick="wrongObject()">📖</button>
+
+<button class="magicBtn" onclick="wrongObject()">🪶</button>
+
+</div>
+
+</div>
+
+<p id="message"></p>
+
+<div id="unlock" style="display:none;">
+
+<h2>📖 The Final Chapter is Ready</h2>
+
+<p>
+
+The library has accepted your kindness.
+
+A hidden book slowly opens before you...
+
+</p>
+
+<button class="nextBtn" onclick="window.location.href='letter.html'">
+
+Read the Letter 💌
+
+</button>
+
+</div>
+
+</div>
+
+<script src="games.js"></script>
+
+</body>
+
+</html>
