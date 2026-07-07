@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter II - The Enchanted Garden</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="flowers.css">
+
+</head>
+
+<body>
+
+<div class="sparkles"></div>
+<div class="petals"></div>
+<div class="fireflies"></div>
+
+<div class="container">
+
+<div class="flowerIcon">
+
+🌹
+
+</div>
+
+<h1>The Enchanted Garden</h1>
+
+<p class="subtitle">
+
+Welcome,
+<span id="playerName"></span>.
+
+</p>
+
+<p>
+
+Hidden behind the library is a beautiful garden filled with enchanted roses and lilies.
+
+Legend says that only someone with a kind heart can awaken the magic hidden inside the flowers.
+
+Choose the enchanted rose to continue your story.
+
+</p>
+
+<div class="garden">
+
+<button class="flower" onclick="wrongFlower()">🌷</button>
+
+<button class="flower" onclick="wrongFlower()">🌼</button>
+
+<button class="flower" onclick="correctFlower()">🌹</button>
+
+<button class="flower" onclick="wrongFlower()">🌸</button>
+
+<button class="flower" onclick="wrongFlower()">🌺</button>
+
+<button class="flower" onclick="wrongFlower()">🤍</button>
+
+</div>
+
+<p id="message"></p>
+
+</div>
+
+<script src="flowers.js"></script>
+
+</body>
+
+</html>
