@@ -1,0 +1,384 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;500&display=swap');
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+font-family:'Poppins',sans-serif;
+
+background:
+linear-gradient(rgba(18,15,25,.45),rgba(18,15,25,.65)),
+url("https://images.unsplash.com/photo-1468327768560-75b778cbb551?auto=format&fit=crop&w=2000&q=80");
+
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+
+min-height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+overflow:hidden;
+
+}
+
+/* ======================
+   Fireflies
+====================== */
+
+.fireflies::before{
+
+content:"✨ ✨ ✨ ✨ ✨";
+
+position:fixed;
+
+top:-20%;
+
+left:-10%;
+
+width:120%;
+
+font-size:24px;
+
+opacity:.35;
+
+animation:fireflies 18s linear infinite;
+
+}
+
+/* ======================
+   Rose Petals
+====================== */
+
+.petals::before{
+
+content:"🌹 🌹 🌹 🌹 🌹";
+
+position:fixed;
+
+top:-20%;
+
+left:-10%;
+
+width:120%;
+
+font-size:30px;
+
+opacity:.30;
+
+animation:petals 24s linear infinite;
+
+}
+
+/* ======================
+   Sparkles
+====================== */
+
+.sparkles::before{
+
+content:"✨ ✨ ✨ ✨ ✨ ✨";
+
+position:fixed;
+
+top:-20%;
+
+left:-10%;
+
+width:120%;
+
+font-size:20px;
+
+opacity:.25;
+
+animation:sparkles 30s linear infinite;
+
+}
+
+/* ======================
+   Main Card
+====================== */
+
+.container{
+
+width:92%;
+max-width:850px;
+
+padding:45px;
+
+background:rgba(255,248,240,.92);
+
+backdrop-filter:blur(10px);
+
+border-radius:28px;
+
+border:2px solid rgba(255,215,120,.35);
+
+box-shadow:
+0 20px 60px rgba(0,0,0,.45),
+0 0 40px rgba(255,215,0,.20);
+
+text-align:center;
+
+animation:fadeUp 1.5s;
+
+}
+
+/* ======================
+   Rose Icon
+====================== */
+
+.flowerIcon{
+
+font-size:75px;
+
+margin-bottom:20px;
+
+animation:floatRose 3s ease-in-out infinite;
+
+}
+
+/* ======================
+   Heading
+====================== */
+
+h1{
+
+font-family:'Cinzel',serif;
+
+font-size:46px;
+
+color:#d4af37;
+
+text-shadow:0 0 15px rgba(255,215,0,.6);
+
+margin-bottom:15px;
+
+}
+
+.subtitle{
+
+font-size:22px;
+
+color:#7b4b2a;
+
+margin-bottom:20px;
+
+}
+
+p{
+
+font-size:18px;
+
+line-height:1.9;
+
+color:#5d4037;
+
+}
+
+/* ======================
+   Flower Buttons
+====================== */
+
+.garden{
+
+margin-top:35px;
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:20px;
+
+}
+
+.flower{
+
+font-size:55px;
+
+padding:18px;
+
+border:none;
+
+border-radius:20px;
+
+cursor:pointer;
+
+background:rgba(255,255,255,.70);
+
+transition:.35s;
+
+box-shadow:0 0 18px rgba(255,215,0,.20);
+
+}
+
+.flower:hover{
+
+transform:translateY(-8px) scale(1.08);
+
+box-shadow:
+0 0 25px gold,
+0 0 45px rgba(255,215,0,.45);
+
+}
+
+/* ======================
+   Message
+====================== */
+
+#message{
+
+margin-top:35px;
+
+font-size:22px;
+
+font-weight:bold;
+
+color:#b8860b;
+
+min-height:40px;
+
+}
+
+/* ======================
+   Animations
+====================== */
+
+@keyframes floatRose{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-10px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes sparkles{
+
+0%{
+
+transform:translateY(-150px);
+
+}
+
+100%{
+
+transform:translateY(120vh);
+
+}
+
+}
+
+@keyframes petals{
+
+0%{
+
+transform:translateY(-120px) rotate(0deg);
+
+}
+
+100%{
+
+transform:translateY(120vh) rotate(360deg);
+
+}
+
+}
+
+@keyframes fireflies{
+
+0%{
+
+transform:translateY(-120px);
+
+}
+
+100%{
+
+transform:translateY(120vh);
+
+}
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* ======================
+   Mobile
+====================== */
+
+@media(max-width:768px){
+
+.container{
+
+padding:30px 20px;
+
+}
+
+h1{
+
+font-size:34px;
+
+}
+
+.subtitle{
+
+font-size:18px;
+
+}
+
+p{
+
+font-size:16px;
+
+}
+
+.garden{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.flower{
+
+font-size:45px;
+
+}
+
+}
