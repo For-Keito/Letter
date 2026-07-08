@@ -3,12 +3,15 @@
 // ======================================
 
 // Greeting
-const name = localStorage.getItem("herName") || "Keito";
+
+const name = localStorage.getItem("playerName") || "Keito";
 
 document.getElementById("greeting").innerHTML =
 `Hey, ${name}... ❤️`;
 
+// ======================================
 // Your Letter
+// ======================================
 
 const paragraphs = [
 
@@ -87,6 +90,7 @@ function typeParagraph(){
         setTimeout(()=>{
 
             document.getElementById("ending").style.display="block";
+            document.getElementById("ending").classList.add("fadeIn");
 
         },1800);
 
@@ -112,13 +116,10 @@ function typeParagraph(){
 
             setTimeout(typeCharacter,45);
 
-        }
-
-        else{
+        }else{
 
             paragraphIndex++;
 
-            // Pause before next paragraph
             setTimeout(typeParagraph,2200);
 
         }
@@ -144,35 +145,23 @@ function sparkle(){
     star.innerHTML=icons[Math.floor(Math.random()*icons.length)];
 
     star.style.position="fixed";
-
     star.style.left=Math.random()*100+"vw";
-
     star.style.top="-20px";
-
     star.style.fontSize=(10+Math.random()*20)+"px";
-
     star.style.pointerEvents="none";
-
     star.style.opacity=Math.random();
 
     document.body.appendChild(star);
 
     const duration=6000+Math.random()*3000;
 
-    star.animate([
-
-        {
-            transform:"translateY(0)"
-        },
-
-        {
-            transform:`translateY(${window.innerHeight+50}px)`
-        }
-
-    ],{
-
+    star.animate(
+    [
+        {transform:"translateY(0)"},
+        {transform:`translateY(${window.innerHeight+50}px)`}
+    ],
+    {
         duration:duration
-
     });
 
     setTimeout(()=>{
