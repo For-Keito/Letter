@@ -1,430 +1,228 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap');
 
+/* ===========================
+   RESET
+=========================== */
+
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
+
+/* ===========================
+   BODY
+=========================== */
 
 body{
 
-font-family:'Poppins',sans-serif;
+    font-family:'Poppins',sans-serif;
 
-min-height:100vh;
+    min-height:100vh;
 
-display:flex;
-justify-content:center;
-align-items:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
-overflow:hidden;
+    overflow-x:hidden;
 
-background:
-linear-gradient(rgba(35,22,12,.55),rgba(35,22,12,.70)),
-url("https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=2000&q=80");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
 
-background-size:cover;
-background-position:center;
-background-attachment:fixed;
+    position:relative;
 
 }
 
-/* Floating Sparkles */
+/* ===========================
+   PAGE BACKGROUNDS
+=========================== */
 
-.stars{
+.home{
 
-position:fixed;
+    background-image:
+    linear-gradient(rgba(35,22,12,.55),rgba(35,22,12,.75)),
+    url("IMG_4557.png");
 
-inset:0;
+}
 
-pointer-events:none;
+.garden{
 
-overflow:hidden;
+    background-image:
+    linear-gradient(rgba(20,15,10,.45),rgba(20,15,10,.70)),
+    url("IMG_4558.png");
+
+}
+
+.library{
+
+    background-image:
+    linear-gradient(rgba(35,22,12,.55),rgba(35,22,12,.75)),
+    url("IMG_4559.png");
+
+}
+
+.ballroom{
+
+    background-image:
+    linear-gradient(rgba(15,15,25,.45),rgba(15,15,25,.65)),
+    url("IMG_4560.png");
+
+}
+
+/* ===========================
+   FLOATING EFFECTS
+=========================== */
+
+.stars,
+.petals,
+.particles{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
 
 }
 
 .stars::before{
 
-content:"✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨";
+    content:"✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨";
 
-position:absolute;
+    position:absolute;
 
-top:-15%;
+    top:-15%;
 
-left:-10%;
+    left:-10%;
 
-width:120%;
+    width:120%;
 
-font-size:26px;
+    font-size:28px;
 
-opacity:.28;
+    opacity:.25;
 
-animation:sparkles 20s linear infinite;
-
-}
-
-/* Rose Petals */
-
-.petals{
-
-position:fixed;
-
-inset:0;
-
-pointer-events:none;
-
-overflow:hidden;
+    animation:sparkles 20s linear infinite;
 
 }
 
 .petals::before{
 
-content:"🌹 🌹 🌹 🌹 🌹 🌹";
+    content:"🌹 🌹 🌹 🌹 🌹 🌹";
 
-position:absolute;
+    position:absolute;
 
-top:-15%;
+    top:-15%;
 
-left:-10%;
+    left:-10%;
 
-width:120%;
+    width:120%;
 
-font-size:32px;
+    font-size:30px;
 
-opacity:.25;
+    opacity:.22;
 
-animation:petals 25s linear infinite;
-
-}
-
-/* Floating Books */
-
-.particles{
-
-position:fixed;
-
-inset:0;
-
-pointer-events:none;
-
-overflow:hidden;
+    animation:petals 24s linear infinite;
 
 }
 
 .particles::before{
 
-content:"📖 📚 📖 📚 📖 📚";
+    content:"📚 📖 📚 📖 📚 📖";
 
-position:absolute;
+    position:absolute;
 
-top:-20%;
+    top:-20%;
 
-left:-10%;
+    left:-10%;
 
-width:120%;
+    width:120%;
 
-font-size:26px;
+    font-size:28px;
 
-opacity:.18;
+    opacity:.15;
 
-animation:books 35s linear infinite;
+    animation:books 35s linear infinite;
 
 }
 
-/* Story Card */
+/* ===========================
+   CONTAINER
+=========================== */
 
 .container{
 
-width:92%;
-max-width:760px;
+    width:92%;
 
-padding:50px;
+    max-width:760px;
 
-background:rgba(255,248,238,.93);
+    padding:45px;
 
-backdrop-filter:blur(8px);
+    text-align:center;
 
-border-radius:28px;
+    border-radius:25px;
 
-text-align:center;
+    background:rgba(255,248,238,.92);
 
-border:2px solid rgba(255,220,140,.4);
+    backdrop-filter:blur(10px);
 
-box-shadow:
-0 20px 60px rgba(0,0,0,.45),
-0 0 40px rgba(255,215,0,.15);
+    border:2px solid rgba(255,215,120,.35);
 
-animation:fadeUp 1.4s;
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.45),
+    0 0 35px rgba(255,215,0,.12);
 
-}
-
-/* Book Icon */
-
-.bookIcon{
-
-font-size:70px;
-
-margin-bottom:20px;
-
-animation:floatBook 3s ease-in-out infinite;
+    animation:fadeUp 1s;
 
 }
 
-/* Heading */
+/* ===========================
+   TYPOGRAPHY
+=========================== */
 
 h1{
 
-font-family:'Cinzel',serif;
+    font-family:'Cinzel',serif;
 
-font-size:48px;
+    font-size:48px;
 
-color:#d4af37;
+    color:#d4af37;
 
-text-shadow:0 0 10px rgba(255,215,0,.5);
+    margin-bottom:20px;
 
-margin-bottom:20px;
+    text-shadow:0 0 12px rgba(255,215,0,.35);
 
 }
-
-/* Subtitle */
 
 .subtitle{
 
-font-size:20px;
+    font-size:20px;
 
-color:#6b4c35;
+    color:#6b4c35;
 
-line-height:1.8;
+    line-height:1.8;
 
-margin-bottom:25px;
+    margin-bottom:20px;
 
 }
-
-/* Paragraph */
 
 p{
 
-font-size:18px;
+    color:#5c4636;
 
-color:#5c4636;
+    font-size:18px;
 
-line-height:1.9;
+    line-height:1.8;
 
-margin-bottom:20px;
+    margin-bottom:18px;
 
 }
-
-/* Quote */
 
 .quote{
 
-margin:30px 0;
+    font-family:'Cinzel',serif;
 
-font-family:'Cinzel',serif;
-
-font-size:22px;
-
-color:#8b5e3c;
-
-font-style:italic;
-
-}
-
-/* Input */
-
-input{
-
-width:80%;
-
-padding:14px;
-
-font-size:17px;
-
-border-radius:40px;
-
-border:2px solid #d4af37;
-
-outline:none;
-
-margin-top:20px;
-
-}
-
-/* Button */
-
-button{
-
-margin-top:25px;
-
-padding:15px 38px;
-
-font-size:18px;
-
-border:none;
-
-border-radius:40px;
-
-cursor:pointer;
-
-background:linear-gradient(45deg,#b8860b,#e6c35c);
-
-color:white;
-
-transition:.35s;
-
-box-shadow:0 0 20px rgba(255,215,0,.4);
-
-}
-
-button:hover{
-
-transform:translateY(-4px) scale(1.05);
-
-box-shadow:
-0 0 25px gold,
-0 0 50px rgba(255,215,0,.5);
-
-}
-
-/* Rose */
-
-.rose{
-
-margin-top:35px;
-
-font-size:60px;
-
-animation:roseFloat 4s ease-in-out infinite;
-
-}
-
-/* Animations */
-
-@keyframes fadeUp{
-
-from{
-
-opacity:0;
-
-transform:translateY(40px);
-
-}
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-}
-
-@keyframes floatBook{
-
-0%{transform:translateY(0);}
-50%{transform:translateY(-10px);}
-100%{transform:translateY(0);}
-
-}
-
-@keyframes roseFloat{
-
-0%{transform:translateY(0);}
-50%{transform:translateY(-8px);}
-100%{transform:translateY(0);}
-
-}
-
-@keyframes sparkles{
-
-0%{
-
-transform:translateY(-150px);
-
-}
-
-100%{
-
-transform:translateY(120vh);
-
-}
-
-}
-
-@keyframes petals{
-
-0%{
-
-transform:translateY(-120px) rotate(0deg);
-
-}
-
-100%{
-
-transform:translateY(120vh) rotate(360deg);
-
-}
-
-}
-
-@keyframes books{
-
-0%{
-
-transform:translateY(-180px) rotate(-8deg);
-
-}
-
-100%{
-
-transform:translateY(120vh) rotate(8deg);
-
-}
-
-}
-
-/* Mobile */
-
-@media(max-width:768px){
-
-.container{
-
-padding:30px 20px;
-
-}
-
-h1{
-
-font-size:34px;
-
-}
-
-.subtitle{
-
-font-size:17px;
-
-}
-
-p{
-
-font-size:16px;
-
-}
-
-input{
-
-width:100%;
-
-}
-
-button{
-
-width:100%;
-
-}
-
-background-image:url("images/library.jpg");
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
-}
+    font-size:22px
