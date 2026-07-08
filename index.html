@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>The Enchanted Story</title>
+<title>The Enchanted Library</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,78 +17,73 @@
 
 </head>
 
-<body class="chapter1">
-
-<!-- Background Effects -->
+<body class="home">
 
 <div class="stars"></div>
 <div class="particles"></div>
 <div class="petals"></div>
 
-<!-- Main Card -->
-
 <div class="container">
 
 <div class="bookIcon">
-
 📖
-
 </div>
 
-<h1>
-
-The Enchanted Library
-
-</h1>
+<h1>The Enchanted Library</h1>
 
 <p class="subtitle">
-
 Some stories aren't found inside books...
-
 Sometimes they begin with meeting someone unexpected.
-
 </p>
 
 <p>
-
 Welcome, traveler.
-
-Beyond these shelves lies a story written from the heart.
-
-The pages only reveal themselves to someone willing to open them.
-
+Beyond these enchanted shelves lies a story written from the heart.
+The pages reveal themselves only to someone willing to believe in a little magic.
 </p>
 
 <div class="quote">
-
 "Every fairy tale begins with a name."
-
 </div>
-
-<div class="nameBox">
 
 <input
 type="text"
 id="name"
-placeholder="Please enter your name">
+placeholder="Enter your name">
+
+<br>
 
 <button onclick="openStory()">
-
-Open the Story
-
+📖 Open the Story
 </button>
 
-</div>
-
 <div class="rose">
-
 🌹
-
 </div>
 
 </div>
 
-<script src="script.js"></script>
+<script>
+
+function openStory(){
+
+const name=document.getElementById("name").value.trim();
+
+if(name===""){
+
+alert("Please enter your name first.");
+
+return;
+
+}
+
+localStorage.setItem("playerName",name);
+
+window.location.href="flowers.html";
+
+}
+
+</script>
 
 </body>
 
