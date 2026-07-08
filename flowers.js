@@ -2,167 +2,101 @@
 // Chapter II - The Enchanted Garden
 // ===============================
 
-// Display the name from Chapter I
-window.onload = function () {
+document.addEventListener("DOMContentLoaded", () => {
 
-    const player = localStorage.getItem("herName");
+    const player = localStorage.getItem("playerName") || "Dear Guest";
 
-    if(player){
+    document.getElementById("playerName").textContent = player;
 
-        document.getElementById("playerName").textContent = player;
+});
 
-    }else{
+// ------------------------------
+// Wrong Flower
+// ------------------------------
 
-        document.getElementById("playerName").textContent = "Dear Guest";
-
-    }
-
-};
-
-// Wrong flower
 function wrongFlower(){
-
-    const message = document.getElementById("message");
 
     const hints = [
 
         "🌸 The garden whispers... perhaps another flower.",
+
         "✨ A soft breeze tells you to keep looking.",
-        "🦋 Not this one... the enchanted rose is waiting.",
-        "🌼 The magic sparkles, but something feels missing.",
-        "🌿 You're getting closer..."
+
+        "🦋 That isn't the enchanted rose.",
+
+        "🌼 The magic tells you to try again.",
+
+        "🌿 Follow your heart."
 
     ];
 
-    message.innerHTML =
-    hints[Math.floor(Math.random()*hints.length)];
+    const message = document.getElementById("message");
+
+    message.innerHTML = hints[Math.floor(Math.random()*hints.length)];
 
 }
 
-// Correct flower
+// ------------------------------
+// Correct Flower
+// ------------------------------
+
 function correctFlower(){
 
-    const message=document.getElementById("message");
+    const message = document.getElementById("message");
 
-    message.innerHTML="🌹 The Enchanted Rose has awakened!";
+    message.innerHTML =
+    "🌹 You found the Enchanted Rose!";
 
     createMagic();
 
-    setTimeout(()=>{
+    setTimeout(() => {
 
-        magicalTransition();
+        window.location.href = "games.html";
 
     },2500);
 
 }
 
-// Golden sparkles
+// ------------------------------
+// Magic Effect
+// ------------------------------
+
 function createMagic(){
 
-    for(let i=0;i<80;i++){
+    for(let i=0;i<60;i++){
 
-        const star=document.createElement("div");
+        const sparkle=document.createElement("div");
 
-        star.innerHTML=Math.random()>0.5?"✨":"⭐";
+        sparkle.innerHTML=Math.random()>0.5?"✨":"⭐";
 
-        star.style.position="fixed";
+        sparkle.style.position="fixed";
 
-        star.style.left=Math.random()*100+"vw";
+        sparkle.style.left=Math.random()*100+"vw";
 
-        star.style.top=Math.random()*100+"vh";
+        sparkle.style.top=Math.random()*100+"vh";
 
-        star.style.fontSize=(10+Math.random()*25)+"px";
+        sparkle.style.fontSize=(12+Math.random()*25)+"px";
 
-        star.style.opacity=Math.random();
+        sparkle.style.pointerEvents="none";
 
-        star.style.pointerEvents="none";
+        sparkle.style.transition="2s";
 
-        star.style.transition="2s";
-
-        document.body.appendChild(star);
+        document.body.appendChild(sparkle);
 
         setTimeout(()=>{
 
-            star.style.transform="translateY(-120px) scale(2)";
-            star.style.opacity="0";
+            sparkle.style.transform="translateY(-150px) scale(2)";
 
-        },50);
+            sparkle.style.opacity="0";
+
+        },100);
 
         setTimeout(()=>{
 
-            star.remove();
+            sparkle.remove();
 
         },2200);
 
     }
-
-}
-
-// Fade to next chapter
-function magicalTransition(){
-
-    const overlay=document.createElement("div");
-
-    overlay.innerHTML=`
-
-        <div class="transitionBox">
-
-            <div class="roseSpin">🌹</div>
-
-            <h2>The Garden Blesses Your Journey</h2>
-
-            <p>
-
-            The petals dance through the air...
-
-            A hidden path opens toward another chapter.
-
-            </p>
-
-        </div>
-
-    `;
-
-    overlay.style.position="fixed";
-
-    overlay.style.top="0";
-
-    overlay.style.left="0";
-
-    overlay.style.width="100%";
-
-    overlay.style.height="100%";
-
-    overlay.style.background="linear-gradient(#2f1d14,#000)";
-
-    overlay.style.display="flex";
-
-    overlay.style.justifyContent="center";
-
-    overlay.style.alignItems="center";
-
-    overlay.style.textAlign="center";
-
-    overlay.style.color="white";
-
-    overlay.style.zIndex="9999";
-
-    overlay.style.opacity="0";
-
-    overlay.style.transition="1.5s";
-
-    document.body.appendChild(overlay);
-
-    setTimeout(()=>{
-
-        overlay.style.opacity="1";
-
-    },100);
-
-    setTimeout(()=>{
-
-        window.location.href="games.html";
-
-    },3500);
 
 }
