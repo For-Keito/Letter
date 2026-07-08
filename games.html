@@ -6,21 +6,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>The Hidden Library</title>
+<title>Chapter III - The Hidden Library</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
+<link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="games.css">
 
 </head>
 
-<body class="chapter3">
+<body class="library">
 
-<div class="sparkles"></div>
-<div class="books"></div>
+<div class="stars"></div>
+<div class="particles"></div>
+<div class="petals"></div>
 
 <div class="container">
 
@@ -30,31 +32,25 @@
 
 <h2 id="welcome"></h2>
 
-<p class="intro">
+<p class="subtitle">
 
 The enchanted library has chosen you.
 
-Before you can open the final story, three magical tasks await.
-
-Complete them to unlock the hidden chapter.
+Complete the three magical tasks to reveal the final chapter.
 
 </p>
+
 <p id="progress">0/3 Challenges Completed</p>
+
 <p id="message"></p>
 
-<div id="unlock" style="display:none;">
-    <a href="chapter4.html" class="next-btn">
-        Continue Your Adventure →
-    </a>
-</div>
-  
+<!-- ===================== -->
 <!-- Task 1 -->
+<!-- ===================== -->
 
 <div class="task">
 
-<h3>📖 Task I</h3>
-
-<p>Return the enchanted books.</p>
+<h3>📖 Task I - Return the Enchanted Books</h3>
 
 <div class="items">
 
@@ -68,13 +64,13 @@ Complete them to unlock the hidden chapter.
 
 </div>
 
+<!-- ===================== -->
 <!-- Task 2 -->
+<!-- ===================== -->
 
 <div class="task">
 
-<h3>🕯️ Task II</h3>
-
-<p>Light the enchanted candles.</p>
+<h3>🕯️ Task II - Light the Candles</h3>
 
 <div class="items">
 
@@ -88,13 +84,13 @@ Complete them to unlock the hidden chapter.
 
 </div>
 
+<!-- ===================== -->
 <!-- Task 3 -->
+<!-- ===================== -->
 
 <div class="task">
 
-<h3>🌹 Task III</h3>
-
-<p>Find the enchanted rose.</p>
+<h3>🌹 Task III - Find the Enchanted Rose</h3>
 
 <div class="items">
 
@@ -114,21 +110,21 @@ Complete them to unlock the hidden chapter.
 
 </div>
 
-<p id="message"></p>
+<div id="unlock" style="display:none; margin-top:35px;">
 
-<div id="unlock" style="display:none;">
-
-<h2>📖 The Final Chapter is Ready</h2>
+<h2>✨ The Final Chapter Awaits ✨</h2>
 
 <p>
 
 The library has accepted your kindness.
 
-A hidden book slowly opens before you...
+A magical book slowly opens before you...
 
 </p>
 
-<button class="nextBtn" onclick="window.location.href='letter.html'">
+<button class="nextBtn"
+
+onclick="window.location.href='letter.html'">
 
 Read the Letter 💌
 
@@ -143,70 +139,3 @@ Read the Letter 💌
 </body>
 
 </html>
-
-body{
-    background:url("images/library.jpg") center/cover no-repeat fixed;
-    font-family:Georgia,serif;
-    color:white;
-}
-
-button{
-    padding:12px 20px;
-    border:none;
-    border-radius:12px;
-    background:#c99b3b;
-    color:white;
-    cursor:pointer;
-    transition:.3s;
-}
-
-button:hover{
-    transform:scale(1.08);
-    background:#e0b84d;
-}
-
-#message{
-    margin-top:20px;
-    font-size:22px;
-    color:#ffe7a8;
-}
-
-#progress{
-    font-size:20px;
-    color:#fff2b0;
-}
-
-.next-btn{
-    display:inline-block;
-    margin-top:30px;
-    padding:15px 25px;
-    background:#8b0000;
-    color:white;
-    text-decoration:none;
-    border-radius:15px;
-    transition:.3s;
-}
-
-.next-btn:hover{
-    background:#b00020;
-    transform:scale(1.05);
-}
-
-.fade{
-    animation:fade .6s;
-}
-
-@keyframes fade{
-    from{
-        opacity:0;
-        transform:translateY(15px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-.fadeIn{
-    animation:fade 1s;
-}
