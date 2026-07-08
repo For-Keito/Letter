@@ -6,6 +6,10 @@ padding:0;
 box-sizing:border-box;
 }
 
+/* ==========================
+   BODY
+========================== */
+
 body{
 
 font-family:'Poppins',sans-serif;
@@ -16,19 +20,28 @@ display:flex;
 justify-content:center;
 align-items:center;
 
-overflow:hidden;
-
-background:
-linear-gradient(rgba(35,20,10,.55),rgba(20,12,8,.75)),
-url("https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=2000&q=80");
+overflow-x:hidden;
 
 background-size:cover;
 background-position:center;
+background-repeat:no-repeat;
 background-attachment:fixed;
 
 }
 
-/* Floating Sparkles */
+/* Ballroom Background */
+
+.ballroom{
+
+background-image:
+linear-gradient(rgba(20,15,20,.55),rgba(20,15,20,.75)),
+url("IMG_4560.png");
+
+}
+
+/* ==========================
+   FLOATING EFFECTS
+========================== */
 
 .sparkles::before{
 
@@ -37,9 +50,7 @@ content:"✨ ✨ ✨ ✨ ✨ ✨ ✨";
 position:fixed;
 
 top:-20%;
-
 left:-10%;
-
 width:120%;
 
 font-size:22px;
@@ -50,8 +61,6 @@ animation:sparkles 20s linear infinite;
 
 }
 
-/* Rose Petals */
-
 .petals::before{
 
 content:"🌹 🌹 🌹 🌹 🌹";
@@ -59,9 +68,7 @@ content:"🌹 🌹 🌹 🌹 🌹";
 position:fixed;
 
 top:-20%;
-
 left:-10%;
-
 width:120%;
 
 font-size:28px;
@@ -72,7 +79,9 @@ animation:petals 25s linear infinite;
 
 }
 
-/* Book */
+/* ==========================
+   BOOK
+========================== */
 
 .book{
 
@@ -81,7 +90,7 @@ max-width:900px;
 
 padding:50px;
 
-background:#f9f1dc;
+background:rgba(249,241,220,.95);
 
 border-radius:25px;
 
@@ -93,11 +102,9 @@ box-shadow:
 
 position:relative;
 
-animation:fadeUp 1.5s;
+animation:fadeUp 1.2s;
 
 }
-
-/* Decorative border */
 
 .book::before{
 
@@ -118,43 +125,45 @@ pointer-events:none;
 
 }
 
-h1{
+/* ==========================
+   HEADINGS
+========================== */
+
+.bookIcon{
+
+font-size:70px;
 
 text-align:center;
 
-font-size:65px;
-
 margin-bottom:15px;
-
-animation:floatBook 3s ease-in-out infinite;
 
 }
 
-h2{
+h1{
 
 font-family:'Cinzel',serif;
 
 text-align:center;
 
+font-size:42px;
+
 color:#b8860b;
 
-font-size:40px;
-
-margin-bottom:20px;
+margin-bottom:15px;
 
 }
 
-.intro{
+.subtitle{
 
 text-align:center;
 
-font-style:italic;
-
-font-size:19px;
-
-margin-bottom:35px;
+font-size:18px;
 
 color:#6b4b2b;
+
+margin-bottom:30px;
+
+font-style:italic;
 
 }
 
@@ -172,7 +181,9 @@ text-align:center;
 
 }
 
-/* Letter */
+/* ==========================
+   LETTER
+========================== */
 
 #letter{
 
@@ -190,15 +201,15 @@ min-height:250px;
 
 #letter p{
 
-margin-bottom:28px;
+margin-bottom:25px;
 
-opacity:0;
-
-animation:fadeParagraph 1.2s forwards;
+animation:fadeParagraph 1s forwards;
 
 }
 
-/* Ending */
+/* ==========================
+   ENDING
+========================== */
 
 #ending{
 
@@ -206,13 +217,13 @@ margin-top:50px;
 
 text-align:center;
 
-animation:fadeUp 2s;
+animation:fadeUp 1.5s;
 
 }
 
 .rose{
 
-font-size:75px;
+font-size:70px;
 
 margin-bottom:20px;
 
@@ -222,13 +233,13 @@ animation:roseFloat 3s infinite;
 
 .love{
 
+font-size:40px;
+
 color:#c62828;
 
-font-size:42px;
-
-text-shadow:0 0 15px rgba(255,0,0,.25);
-
 margin-bottom:25px;
+
+text-shadow:0 0 12px rgba(255,0,0,.2);
 
 }
 
@@ -248,9 +259,7 @@ background:linear-gradient(45deg,#b8860b,#e6c766);
 
 color:white;
 
-transition:.35s;
-
-box-shadow:0 0 20px rgba(255,215,0,.35);
+transition:.3s;
 
 }
 
@@ -258,20 +267,19 @@ button:hover{
 
 transform:scale(1.05);
 
-box-shadow:
-0 0 30px gold,
-0 0 60px rgba(255,215,0,.5);
+box-shadow:0 0 25px gold;
 
 }
 
-/* Animations */
+/* ==========================
+   ANIMATIONS
+========================== */
 
 @keyframes fadeParagraph{
 
 from{
 
 opacity:0;
-
 transform:translateY(20px);
 
 }
@@ -279,7 +287,6 @@ transform:translateY(20px);
 to{
 
 opacity:1;
-
 transform:translateY(0);
 
 }
@@ -291,26 +298,16 @@ transform:translateY(0);
 from{
 
 opacity:0;
-
-transform:translateY(40px);
+transform:translateY(30px);
 
 }
 
 to{
 
 opacity:1;
-
 transform:translateY(0);
 
 }
-
-}
-
-@keyframes floatBook{
-
-0%{transform:translateY(0);}
-50%{transform:translateY(-10px);}
-100%{transform:translateY(0);}
 
 }
 
@@ -324,37 +321,21 @@ transform:translateY(0);
 
 @keyframes sparkles{
 
-0%{
-
-transform:translateY(-150px);
-
-}
-
-100%{
-
-transform:translateY(120vh);
-
-}
+0%{transform:translateY(-150px);}
+100%{transform:translateY(120vh);}
 
 }
 
 @keyframes petals{
 
-0%{
-
-transform:translateY(-120px) rotate(0deg);
-
-}
-
-100%{
-
-transform:translateY(120vh) rotate(360deg);
+0%{transform:translateY(-120px) rotate(0);}
+100%{transform:translateY(120vh) rotate(360deg);}
 
 }
 
-}
-
-/* Mobile */
+/* ==========================
+   MOBILE
+========================== */
 
 @media(max-width:768px){
 
@@ -364,15 +345,15 @@ padding:30px 20px;
 
 }
 
-h2{
+h1{
 
-font-size:30px;
+font-size:32px;
 
 }
 
 #greeting{
 
-font-size:34px;
+font-size:32px;
 
 }
 
@@ -386,7 +367,7 @@ line-height:1.8;
 
 .love{
 
-font-size:34px;
+font-size:30px;
 
 }
 
@@ -396,8 +377,4 @@ width:100%;
 
 }
 
-background-image:url("images/castle.jpg");
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
 }
