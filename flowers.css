@@ -381,4 +381,8 @@ font-size:45px;
 
 }
 
+background-image:url("images/garden.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
 }
