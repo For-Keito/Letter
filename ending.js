@@ -62,7 +62,9 @@ function typeParagraph(){
 
         setTimeout(()=>{
 
-            document.getElementById("finalMessage").style.display="block";
+            const finalMessage = document.getElementById("finalMessage");
+            finalMessage.style.display = "block";
+            finalMessage.classList.add("fadeIn");
 
             createCelebration();
 
@@ -72,19 +74,19 @@ function typeParagraph(){
 
     }
 
-    const p=document.createElement("p");
+    const p = document.createElement("p");
 
     story.appendChild(p);
 
-    let text=paragraphs[paragraph];
+    let text = paragraphs[paragraph];
 
-    let i=0;
+    let i = 0;
 
     function type(){
 
-        if(i<text.length){
+        if(i < text.length){
 
-            p.textContent+=text.charAt(i);
+            p.textContent += text.charAt(i);
 
             i++;
 
@@ -104,7 +106,11 @@ function typeParagraph(){
 
 }
 
-setTimeout(typeParagraph,1200);
+window.onload = () => {
+
+    setTimeout(typeParagraph,1200);
+
+};
 
 // ======================================
 // Magical Celebration
@@ -112,53 +118,36 @@ setTimeout(typeParagraph,1200);
 
 function createCelebration(){
 
-    for(let i=0;i<180;i++){
+    const icons = ["✨","🌹","⭐","💗","💖","🌸"];
 
-        const icon=document.createElement("div");
+    for(let i = 0; i < 180; i++){
 
-        const icons=[
-        "✨","🌹","⭐","💗","💖","🌸"
-        ];
+        const icon = document.createElement("div");
 
-        icon.innerHTML=
-        icons[Math.floor(Math.random()*icons.length)];
+        icon.innerHTML = icons[Math.floor(Math.random()*icons.length)];
 
-        icon.style.position="fixed";
-
-        icon.style.left=Math.random()*100+"vw";
-
-        icon.style.top="-40px";
-
-        icon.style.fontSize=(15+Math.random()*25)+"px";
-
-        icon.style.pointerEvents="none";
-
-        icon.style.opacity=Math.random();
+        icon.style.position = "fixed";
+        icon.style.left = Math.random()*100 + "vw";
+        icon.style.top = "-40px";
+        icon.style.fontSize = (15 + Math.random()*25) + "px";
+        icon.style.pointerEvents = "none";
+        icon.style.opacity = Math.random();
 
         document.body.appendChild(icon);
 
-        const duration=5000+Math.random()*4000;
+        const duration = 5000 + Math.random()*4000;
 
-        icon.animate([
-
+        icon.animate(
+        [
             {
-
                 transform:"translateY(0) rotate(0deg)"
-
             },
-
             {
-
-                transform:
-                `translateY(${window.innerHeight+100}px)
-                rotate(${Math.random()*720}deg)`
-
+                transform:`translateY(${window.innerHeight+100}px) rotate(${Math.random()*720}deg)`
             }
-
-        ],{
-
+        ],
+        {
             duration:duration
-
         });
 
         setTimeout(()=>{
@@ -171,45 +160,39 @@ function createCelebration(){
 
 }
 
-// Floating Sparkles Forever
+// ======================================
+// Floating Sparkles
+// ======================================
 
 function sparkle(){
 
-    const s=document.createElement("div");
+    const star = document.createElement("div");
 
-    s.innerHTML="✨";
+    star.innerHTML = "✨";
 
-    s.style.position="fixed";
+    star.style.position = "fixed";
+    star.style.left = Math.random()*100 + "vw";
+    star.style.top = "-20px";
+    star.style.fontSize = (10 + Math.random()*18) + "px";
+    star.style.opacity = Math.random();
+    star.style.pointerEvents = "none";
 
-    s.style.left=Math.random()*100+"vw";
+    document.body.appendChild(star);
 
-    s.style.top="-20px";
+    const duration = 7000;
 
-    s.style.fontSize=(10+Math.random()*18)+"px";
-
-    s.style.opacity=Math.random();
-
-    s.style.pointerEvents="none";
-
-    document.body.appendChild(s);
-
-    const duration=7000;
-
-    s.animate([
-
+    star.animate(
+    [
         {transform:"translateY(0)"},
-
         {transform:`translateY(${window.innerHeight+60}px)`}
-
-    ],{
-
+    ],
+    {
         duration:duration
-
     });
 
     setTimeout(()=>{
 
-        s.remove();
+        star.remove();
 
     },duration);
 
